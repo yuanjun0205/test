@@ -13,14 +13,12 @@ import com.google.gson.JsonSerializer;
 public class EnumSerializer implements JsonSerializer<PackageState>,JsonDeserializer<PackageState> {
 
 	// 对象转为Json时调用,实现JsonSerializer<PackageState>接口
-	@Override
 	public JsonElement serialize(PackageState state, Type arg1,
 			JsonSerializationContext arg2) {
 		return new JsonPrimitive(state.ordinal());
 	}
 
 	// json转为对象时调用,实现JsonDeserializer<PackageState>接口
-	@Override
 	public PackageState deserialize(JsonElement json, Type typeOfT,
 			JsonDeserializationContext context) throws JsonParseException {
 		if (json.getAsInt() < PackageState.values().length)
