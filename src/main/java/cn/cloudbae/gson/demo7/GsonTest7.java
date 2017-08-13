@@ -62,7 +62,7 @@ public class GsonTest7 {
 				.enableComplexMapKeySerialization()
 	            .serializeNulls()
 	            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-	            .setDateFormat("yyyy-MM-dd HH:mm:ss")//时间转化为特定格式 
+	            .setDateFormat("yyyy-MM-dd HH:mm:ss")//时间转化为特定格式，而不是使用一长串Long型数字可读性差
 				.create();
 		
 		//将对象转换成JSON串
