@@ -21,6 +21,7 @@ import sun.security.util.DerInputStream;
 import sun.security.util.DerValue;
 
 //基于私钥与公钥的签名测试
+//可以使用私钥加签，用公钥验签，但反过来不行
 
 public class SignatureTest {
 	public static String privateKeyString = "-----BEGIN RSA PRIVATE KEY-----\n" + 
