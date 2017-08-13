@@ -20,6 +20,8 @@ import org.apache.commons.codec.binary.Base64;
 import sun.security.util.DerInputStream;
 import sun.security.util.DerValue;
 
+//基于私钥与公钥的签名测试
+
 public class SignatureTest {
 	public static String privateKeyString = "-----BEGIN RSA PRIVATE KEY-----\n" + 
 			"MIICXgIBAAKBgQDfDCBE4HnvJN8IpKW/LcFmJ5vv47iEbcg50yZGvDpJr6fED0zW\n" + 
