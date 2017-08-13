@@ -9,7 +9,7 @@ public class RandomTest {
 	public static void main(String[] args) {
 		System.out.println(randomString(20));
 		System.out.println(currentTimeSeconds());
-		System.out.println(toDate(1502442136 * 1000L));
+//		System.out.println(toDate(1502442136 * 1000L));
 	}
 	
 	
@@ -24,8 +24,8 @@ public class RandomTest {
         return (int)(System.currentTimeMillis() / 1000);
     }
     
-    public static Date toDate(long seconds) {
-    		return new Date(seconds);
-    }
+//    public static Date toDate(long seconds) {
+//    		return new Date(seconds);
+//    }
 	
 }
