@@ -22,23 +22,11 @@
 	    <artifactId>httpclient</artifactId>
 	    <version>4.5.3</version>
 	</dependency>
-<<<<<<< HEAD
-=======
-	
->>>>>>> release/release-将回滚后的develop分支合并到master
 	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
 	<dependency>
 	    <groupId>org.apache.httpcomponents</groupId>
 	    <artifactId>httpmime</artifactId>
 	    <version>4.5.3</version>
 	</dependency>
-<<<<<<< HEAD
-
-
-
-    
-    
-=======
->>>>>>> release/release-将回滚后的develop分支合并到master
    </dependencies>
 </project>
