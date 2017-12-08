@@ -28,7 +28,7 @@ public class HttpClientFileUpload {
 		CloseableHttpResponse response = null;
 		try {
 		    httpclient = HttpClients.createDefault();
-		    HttpPost post = new HttpPost("http://192.168.1.174:9280/zuul/storage/api/v1/uploadImage");
+		    HttpPost post = new HttpPost("https://nnapp.cloudbae.cn:38080/zuul/storage/api/v1/uploadFile");
 		//  HttpEntity dataEntity = getMultiFileEntity();//File文件格式上传
 		    HttpEntity dataEntity = getMultiDefaultFileEntity();//File文件格式上传（缺省）
 		//  HttpEntity dataEntity = getMultiArrayEntity();//byte数组格式上传
@@ -65,7 +65,7 @@ public class HttpClientFileUpload {
 	public HttpEntity getMultiDefaultFileEntity() {
 	    MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 	    //File file = new File("/Users/yuanjun/Documents/wo.jpg");
-	    File file = new File("/Users/yuanjun/Downloads/IMG_4040.JPG");
+	    File file = new File("/Users/yuanjun/Downloads/a.pdf");
 	    builder.addBinaryBody("file", file);
 	    return builder.build();
 	}
