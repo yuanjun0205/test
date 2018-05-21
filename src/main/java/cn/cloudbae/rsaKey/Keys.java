@@ -23,7 +23,6 @@ import sun.misc.BASE64Encoder;
 @SuppressWarnings("unused")
 public class Keys {
     public static final String KEY_ALGORITHM = "RSA";
-    //public static final String SIGNATURE_ALGORITHM = "MD5withRSA";
     public static final String SIGNATURE_ALGORITHM = "SHA256withRSA";
     private static final String PUBLIC_KEY = "RSAPublicKey";
     private static final String PRIVATE_KEY = "RSAPrivateKey";
@@ -67,7 +66,7 @@ public class Keys {
 	
 	public static Map<String, Object> initKey() throws Exception {
 		KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance(KEY_ALGORITHM);
-		keyPairGen.initialize(2048);
+		keyPairGen.initialize(1024);
 		KeyPair keyPair = keyPairGen.generateKeyPair();
 		
 		RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();

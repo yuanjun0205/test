@@ -1,13 +1,11 @@
 package cn.cloudbae;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.GregorianCalendar;
 
 public class CalendarTest {
 
+	/*
 	public static void main(String[] args) {
 		//获取前一个月第一天
         Calendar calendar1 = Calendar.getInstance();
@@ -50,6 +48,34 @@ public class CalendarTest {
         for(String sFileSuffix:fileSuffixs) {
         		System.out.println(sFileSuffix);
         }
+	}
+	*/
+	
+	public static void main(String[] args) throws InterruptedException {
+		//Calendar calendar = new GregorianCalendar();
+		Calendar calendar = Calendar.getInstance();
+		System.out.printf("%1$tF %<tT%n", calendar);
+		byte[] bytes = calendar2Bytes(calendar);
+		System.out.println("bytes.length = " + bytes.length);
+		calendar = bytes2Calendar(bytes);
+		System.out.printf("%1$tF %<tT%n", calendar);
+	}
+
+	public static byte[] calendar2Bytes(Calendar calendar) {
+		int time = (int)(calendar.getTimeInMillis()/1000);
+		byte[] bytes = new byte[4];
+		for(int i = bytes.length - 1; i >= 0; i--) {
+			bytes[i] = (byte)(time & 0xFF);
+			time >>= 8;
+		}
+		return bytes;
+	}
+
+	public static Calendar bytes2Calendar(byte[] bytes) {
+		int time = (bytes[0] << 24) & 0xFF000000 | (bytes[1] << 16) & 0xFF0000 | (bytes[2] << 8) & 0xFF00 | (bytes[3]) & 0xFF;
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTimeInMillis(time * 1000L);
+		return calendar;
 	}
 
 }
